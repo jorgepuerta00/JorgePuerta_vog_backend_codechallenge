@@ -1,14 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-
-namespace VogCodeChallenge.API.Controllers
+﻿namespace VogCodeChallenge.API.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Net;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.Logging;
+    using Swashbuckle.AspNetCore.Annotations;
+
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/v1/[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -24,6 +25,9 @@ namespace VogCodeChallenge.API.Controllers
         }
 
         [HttpGet]
+        [SwaggerOperation(Summary = "Get all WeatherForecast avaibles")]
+        [SwaggerResponse((int)HttpStatusCode.OK, "Get all WeatherForecast succesfully")]
+        [SwaggerResponse((int)HttpStatusCode.BadRequest, "Bad Request")]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
