@@ -8,5 +8,6 @@
         public string LastName { get; set; }
         public string JobTitle { get; set; }
         public string ResidenceAddress { get; set; }
+        public string EmailAddress { get; set; }
     }
 }
