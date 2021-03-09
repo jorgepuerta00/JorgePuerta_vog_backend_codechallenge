@@ -1,10 +1,12 @@
-﻿using System;
-namespace VogCodeChallenge.API.Models
+﻿namespace VogCodeChallenge.API.Models
 {
-    public class Department
+    using System.Collections.Generic;
+    using Repository;
+
+    public class Department : BaseEntity
     {
-        public Department()
-        {
-        }
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public ICollection<Employee> Employees { get; set; }
     }
 }

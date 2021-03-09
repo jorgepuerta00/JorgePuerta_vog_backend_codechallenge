@@ -1,10 +1,12 @@
-﻿using System;
-namespace VogCodeChallenge.API.Models
+﻿namespace VogCodeChallenge.API.Models
 {
-    public class Employee
+    using Repository;
+
+    public class Employee : BaseEntity
     {
-        public Employee()
-        {
-        }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string JobTitle { get; set; }
+        public string ResidenceAddress { get; set; }
     }
 }
