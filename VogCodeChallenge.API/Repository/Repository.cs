@@ -6,60 +6,66 @@ using VogCodeChallenge.API.Models;
 
 namespace VogCodeChallenge.API.Repository
 {
-    public class Repository : IRepository
+    public class Repository<T> : IRepository<T> where T : class
     {
-        public IEnumerable<Employee> GetAll()
+        public async Task<IEnumerable<T>> GetAll()
         {
             List<Employee> employeeInMemoryDatabase = new List<Employee>()
             {
                 new Employee()
                 {
-                    Id = new Guid(),
+                    Id = Guid.NewGuid(),
                     FirstName = "George",
-                    LastName = "Gates"
+                    LastName = "Gates",
+                    JobTitle = "Fullstack",
+                    ResidenceAddress = "Medellin"
                 },
                 new Employee()
                 {
-                    Id = new Guid(),
+                    Id = Guid.NewGuid(),
                     FirstName = "Dianne",
-                    LastName = "Morlotte"
+                    LastName = "Morlotte",
+                    JobTitle = "QA",
+                    ResidenceAddress = "Medellin"
                 },
                 new Employee()
                 {
-                    Id = new Guid(),
+                    Id = Guid.NewGuid(),
                     FirstName = "Raquel",
-                    LastName = "Elsa"
+                    LastName = "Elsa",
+                    JobTitle = "QA",
+                    ResidenceAddress = "Ontario"
                 }
             };
 
-            return employeeInMemoryDatabase;
+            return (IEnumerable<T>)employeeInMemoryDatabase.ToList();
         }
 
-        public IList<Employee> ListAll()
+        public async Task<IList<T>> ListAll()
         {
             List<Employee> employeeInMemoryDatabase = new List<Employee>()
             {
                 new Employee()
                 {
-                    Id = new Guid(),
+                    Id = Guid.NewGuid(),
                     FirstName = "George",
                     LastName = "Gates"
                 },
                 new Employee()
                 {
-                    Id = new Guid(),
+                    Id = Guid.NewGuid(),
                     FirstName = "Dianne",
                     LastName = "Morlotte"
                 },
                 new Employee()
                 {
-                    Id = new Guid(),
+                    Id = Guid.NewGuid(),
                     FirstName = "Raquel",
                     LastName = "Elsa"
                 }
             };
 
-            return employeeInMemoryDatabase;
+            return (IList<T>)employeeInMemoryDatabase.ToList();
         }
     }
 }

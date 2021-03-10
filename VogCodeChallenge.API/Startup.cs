@@ -5,6 +5,8 @@ namespace VogCodeChallenge.API
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using Repository;
+    using Models;
 
     public class Startup
     {
@@ -19,6 +21,7 @@ namespace VogCodeChallenge.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddScoped<IRepository<Employee>, Repository<Employee>>();
 
             services.AddCors(c =>
             {
