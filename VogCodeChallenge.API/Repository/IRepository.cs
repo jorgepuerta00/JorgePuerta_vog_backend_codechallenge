@@ -2,11 +2,11 @@
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    using VogCodeChallenge.API.Models;
+    using Models;
 
-    public interface IRepository
+    public interface IRepository<T> where T : class
     { 
-        public IEnumerable<Employee> GetAll();
-        public IList<Employee> ListAll();
+        public Task<IEnumerable<T>> GetAll();
+        public Task<IList<T>> ListAll();
     }
 }
