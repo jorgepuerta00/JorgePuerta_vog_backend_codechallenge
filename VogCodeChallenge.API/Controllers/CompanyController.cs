@@ -6,8 +6,8 @@
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Mvc;
     using Models;
-    using Repository;
     using Swashbuckle.AspNetCore.Annotations;
+    using vogCodeChallenge.Common.Repository;
 
     [Route("api/v1/[controller]")]
     [ApiController]

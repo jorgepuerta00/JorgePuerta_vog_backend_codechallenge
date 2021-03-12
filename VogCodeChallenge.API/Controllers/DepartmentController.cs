@@ -6,8 +6,8 @@
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Mvc;
     using Models;
-    using Repository;
     using Swashbuckle.AspNetCore.Annotations;
+    using vogCodeChallenge.Common.Repository;
 
     [Route("api/v1/[controller]")]
     [ApiController]
@@ -21,7 +21,7 @@
         }
 
         [HttpGet]
-        [SwaggerOperation(Summary = "Get all companies avaibles")]
+        [SwaggerOperation(Summary = "Get all departments avaibles")]
         [SwaggerResponse((int)HttpStatusCode.OK, "Succesfully Request")]
         [SwaggerResponse((int)HttpStatusCode.BadRequest, "Bad Request")]
         public Task<IEnumerable<Company>> GetAll()

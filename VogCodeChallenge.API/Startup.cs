@@ -1,12 +1,17 @@
 namespace VogCodeChallenge.API
 {
+    using Application.Queries;
+    using Data;
+    using FluentValidation.AspNetCore;
+    using MediatR;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
-    using Repository;
     using Models;
+    using vogCodeChallenge.Common.DependencyInjection;
+    using vogCodeChallenge.Common.Repository;
 
     public class Startup
     {
@@ -22,6 +27,16 @@ namespace VogCodeChallenge.API
         {
             services.AddControllers();
             services.AddScoped<IRepository<Employee>, Repository<Employee>>();
+
+            services.AddControllersWithViews()
+                .AddFluentValidation(cfg =>
+                {
+                    cfg.RegisterValidatorsFromAssemblyContaining<GetEmployeeQueryHandler>();
+                    cfg.RunDefaultMvcValidationAfterFluentValidationExecutes = false;
+                });
+
+            services.AddCustomMSSQLDbContext<ChallengeDbContext>(Configuration)
+                    .AddMediatR(typeof(GetEmployeeQueryHandler).Assembly);
 
             services.AddCors(c =>
             {

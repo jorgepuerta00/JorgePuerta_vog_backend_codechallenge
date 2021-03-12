@@ -8,6 +8,7 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
 WORKDIR /src
 COPY ["VogCodeChallenge.API/VogCodeChallenge.API.csproj", "VogCodeChallenge.API/"]
+COPY ["vogCodeChalenge.Common/vogCodeChallenge.Common.csproj", "vogCodeChalenge.Common/"]
 RUN dotnet restore "VogCodeChallenge.API/VogCodeChallenge.API.csproj"
 COPY . .
 WORKDIR "/src/VogCodeChallenge.API"
