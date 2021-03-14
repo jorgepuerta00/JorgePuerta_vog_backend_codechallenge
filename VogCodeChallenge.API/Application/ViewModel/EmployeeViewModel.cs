@@ -1,9 +1,10 @@
 ﻿namespace VogCodeChallenge.API.Application.ViewModel
 {
-    using vogCodeChallenge.Common.Repository;
+    using System;
 
-    public class EmployeeViewModel : BaseEntity
+    public class EmployeeViewModel
     {
+        public Guid Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string JobTitle { get; set; }

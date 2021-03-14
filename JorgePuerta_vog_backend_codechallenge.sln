@@ -7,9 +7,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VogCodeChallenge.API", "Vog
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VogCodeChallenge.Test", "VogCodeChallenge.Test\VogCodeChallenge.Test.csproj", "{504FB60A-6DFD-4CCA-9994-6B4976D216C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vogCodeChallenge.Common", "vogCodeChalenge.Common\vogCodeChallenge.Common.csproj", "{E028EED3-8775-405F-9FE9-663C1BE4B9FE}"
-EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{4F6E33D4-53A3-46E4-B132-D647F3CCFB13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vogCodeChallenge.Common", "vogCodeChalenge.Common\vogCodeChallenge.Common.csproj", "{F7F7AB25-C599-491C-9E0B-19627D5BB6C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConsoleProject", "ConsoleProject", "{B8AA5E0E-1465-4437-BC69-57BA6B5F39AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LambdaFunctionProject", "LambdaFunctionProject", "{D856A300-5716-4880-9382-A630480D23F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RestApiProject", "RestApiProject", "{975D3074-CEAB-41ED-A4A4-72E82EA8522C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VogCodeChallenge.Console", "VogCodeChallenge.Console\VogCodeChallenge.Console.csproj", "{A8B51DAF-0774-4C0A-A45F-BEE86CD32F5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,19 +33,30 @@ Global
 		{504FB60A-6DFD-4CCA-9994-6B4976D216C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{504FB60A-6DFD-4CCA-9994-6B4976D216C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{504FB60A-6DFD-4CCA-9994-6B4976D216C8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E028EED3-8775-405F-9FE9-663C1BE4B9FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E028EED3-8775-405F-9FE9-663C1BE4B9FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E028EED3-8775-405F-9FE9-663C1BE4B9FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E028EED3-8775-405F-9FE9-663C1BE4B9FE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4F6E33D4-53A3-46E4-B132-D647F3CCFB13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4F6E33D4-53A3-46E4-B132-D647F3CCFB13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F6E33D4-53A3-46E4-B132-D647F3CCFB13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F6E33D4-53A3-46E4-B132-D647F3CCFB13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7F7AB25-C599-491C-9E0B-19627D5BB6C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7F7AB25-C599-491C-9E0B-19627D5BB6C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7F7AB25-C599-491C-9E0B-19627D5BB6C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7F7AB25-C599-491C-9E0B-19627D5BB6C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8B51DAF-0774-4C0A-A45F-BEE86CD32F5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8B51DAF-0774-4C0A-A45F-BEE86CD32F5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8B51DAF-0774-4C0A-A45F-BEE86CD32F5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8B51DAF-0774-4C0A-A45F-BEE86CD32F5C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F074C7D0-0536-4C67-A512-1EA2FDD201E8}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4F6E33D4-53A3-46E4-B132-D647F3CCFB13} = {975D3074-CEAB-41ED-A4A4-72E82EA8522C}
+		{DEEA533C-DCC6-49B2-A027-38169DC0214C} = {975D3074-CEAB-41ED-A4A4-72E82EA8522C}
+		{F7F7AB25-C599-491C-9E0B-19627D5BB6C4} = {975D3074-CEAB-41ED-A4A4-72E82EA8522C}
+		{504FB60A-6DFD-4CCA-9994-6B4976D216C8} = {975D3074-CEAB-41ED-A4A4-72E82EA8522C}
+		{A8B51DAF-0774-4C0A-A45F-BEE86CD32F5C} = {B8AA5E0E-1465-4437-BC69-57BA6B5F39AC}
 	EndGlobalSection
 EndGlobal
