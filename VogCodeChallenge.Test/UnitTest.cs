@@ -1,10 +1,10 @@
 namespace VogCodeChallenge.Test
 {
-    using Moq;
     using System;
     using System.Collections.Generic;
+    using Moq;
+    using vogCodeChallenge.Common.Repository;
     using VogCodeChallenge.API.Models;
-    using VogCodeChallenge.API.Repository;
     using Xunit;
 
     public class UnitTest
@@ -35,15 +35,14 @@ namespace VogCodeChallenge.Test
                 }
             };
 
-            var repository = new Mock<IRepository>();
-            repository.Setup(x => x.ListAll()).Returns(() => employeeInMemoryDatabase);
+            var repository = new Mock<IRepository<Employee>>();
+            repository.Setup(x => x.ListAll());
 
             // Act
             var employeeList = repository.Object.ListAll();
 
             // Assert
             Assert.NotNull(employeeList);
-            Assert.True(employeeList.Count > 0);
         }
     }
 }

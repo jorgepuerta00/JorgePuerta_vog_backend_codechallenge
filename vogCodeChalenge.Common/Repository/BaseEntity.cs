@@ -1,4 +1,4 @@
-﻿namespace VogCodeChallenge.API.Repository
+﻿namespace vogCodeChallenge.Common.Repository
 {
     using System;
 
