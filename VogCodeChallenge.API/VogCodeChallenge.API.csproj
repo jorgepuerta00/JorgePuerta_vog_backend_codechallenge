@@ -8,11 +8,19 @@
 
 
   <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Factory\" />
     <Folder Include="Application\" />
-    <Folder Include="Data\" />
     <Folder Include="Application\ViewModel\" />
+    <Folder Include="Infraestructure\Persistance\" />
+    <Folder Include="Infraestructure\" />
+    <Folder Include="Infraestructure\Factory\" />
+    <Folder Include="Infraestructure\EF\" />
+    <Folder Include="Infraestructure\Repository\" />
+    <Folder Include="Domain\" />
+    <Folder Include="Domain\AggregatesModel\" />
+    <Folder Include="Domain\AggregatesModel\EmployeeAggregate\" />
+    <Folder Include="Domain\AggregatesModel\CompanyAggregate\" />
+    <Folder Include="Domain\AggregatesModel\DepartmentAggregate\" />
+    <Folder Include="Infraestructure\SeedWork\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.4" />

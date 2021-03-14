@@ -1,7 +1,8 @@
-﻿namespace VogCodeChallenge.API.Models
+﻿namespace VogCodeChallenge.API.Domain.AggregatesModel.EmployeeAggregate
 {
     using System;
     using vogCodeChallenge.Common.Repository;
+    using DepartmentAggregate;
 
     public class Employee : BaseEntity
     {

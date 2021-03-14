@@ -1,15 +1,15 @@
 namespace VogCodeChallenge.API
 {
     using Application.Queries;
-    using Data;
+    using Domain.AggregatesModel.EmployeeAggregate;
     using FluentValidation.AspNetCore;
+    using Infraestructure.EF;
     using MediatR;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
-    using Models;
     using vogCodeChallenge.Common.DependencyInjection;
     using vogCodeChallenge.Common.Repository;
 

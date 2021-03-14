@@ -2,7 +2,7 @@ namespace VogCodeChallenge.API
 {
     using System;
     using System.IO;
-    using Data;
+    using Infraestructure.SeedWork;
     using Microsoft.AspNetCore;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Configuration;

@@ -1,8 +1,10 @@
-﻿namespace VogCodeChallenge.API.Data
+﻿namespace VogCodeChallenge.API.Infraestructure.EF
 {
+    using Domain.AggregatesModel.CompanyAggregate;
+    using Domain.AggregatesModel.DepartmentAggregate;
+    using Domain.AggregatesModel.EmployeeAggregate;
     using EntityConfigurations;
     using Microsoft.EntityFrameworkCore;
-    using Models;
 
     public class ChallengeDbContext : DbContext
     {

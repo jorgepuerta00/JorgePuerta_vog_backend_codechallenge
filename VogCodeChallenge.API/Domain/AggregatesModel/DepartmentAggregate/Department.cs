@@ -1,8 +1,8 @@
-﻿namespace VogCodeChallenge.API.Models
+﻿namespace VogCodeChallenge.API.Domain.AggregatesModel.DepartmentAggregate
 {
     using System;
-    using System.Collections.Generic;
     using vogCodeChallenge.Common.Repository;
+    using CompanyAggregate;
 
     public class Department : BaseEntity
     {

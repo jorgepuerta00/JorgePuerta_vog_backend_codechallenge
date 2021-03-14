@@ -1,10 +1,12 @@
-﻿namespace VogCodeChallenge.API.Data
+﻿namespace VogCodeChallenge.API.Infraestructure.SeedWork
 {
     using System;
-    using System.Collections.Generic;
+    using Domain.AggregatesModel.CompanyAggregate;
+    using Domain.AggregatesModel.DepartmentAggregate;
+    using Domain.AggregatesModel.EmployeeAggregate;
+    using Infraestructure.EF;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.DependencyInjection;
-    using Models;
     using Serilog;
 
     public class SeedData

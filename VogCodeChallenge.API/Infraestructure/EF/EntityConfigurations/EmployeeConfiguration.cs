@@ -1,9 +1,9 @@
-﻿namespace VogCodeChallenge.API.Data.EntityConfigurations
+﻿namespace VogCodeChallenge.API.Infraestructure.EF.EntityConfigurations
 {
     using System;
+    using Domain.AggregatesModel.EmployeeAggregate;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
-    using Models;
 
     public class EmployeeConfiguration : IEntityTypeConfiguration<Employee>
     {

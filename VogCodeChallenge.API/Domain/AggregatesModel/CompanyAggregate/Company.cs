@@ -1,4 +1,4 @@
-﻿namespace VogCodeChallenge.API.Models
+﻿namespace VogCodeChallenge.API.Domain.AggregatesModel.CompanyAggregate
 {
     using System;
     using System.Collections.Generic;

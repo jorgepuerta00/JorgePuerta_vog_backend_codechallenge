@@ -5,9 +5,9 @@
     using System.Net;
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Mvc;
-    using Models;
     using Swashbuckle.AspNetCore.Annotations;
     using vogCodeChallenge.Common.Repository;
+    using VogCodeChallenge.API.Domain.AggregatesModel.DepartmentAggregate;
 
     [Route("api/v1/[controller]")]
     [ApiController]
@@ -24,7 +24,7 @@
         [SwaggerOperation(Summary = "Get all departments avaibles")]
         [SwaggerResponse((int)HttpStatusCode.OK, "Succesfully Request")]
         [SwaggerResponse((int)HttpStatusCode.BadRequest, "Bad Request")]
-        public Task<IEnumerable<Company>> GetAll()
+        public Task<IEnumerable<Department>> GetAll()
         {
             throw new NotImplementedException();
         }

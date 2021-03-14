@@ -1,8 +1,8 @@
-﻿namespace VogCodeChallenge.API.Data.EntityConfigurations
+﻿namespace VogCodeChallenge.API.Infraestructure.EF.EntityConfigurations
 {
+    using Domain.AggregatesModel.CompanyAggregate;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
-    using Models;
 
     public class CompanyConfiguration : IEntityTypeConfiguration<Company>
     {
