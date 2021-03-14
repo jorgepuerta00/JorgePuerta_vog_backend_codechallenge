@@ -1,8 +1,6 @@
 ﻿namespace VogCodeChallenge.API.Domain.AggregatesModel.CompanyAggregate
 {
-    using System;
-    using System.Collections.Generic;
-    using vogCodeChallenge.Common.Repository;
+    using vogCodeChallenge.Common;
 
     public class Company : BaseEntity
     {

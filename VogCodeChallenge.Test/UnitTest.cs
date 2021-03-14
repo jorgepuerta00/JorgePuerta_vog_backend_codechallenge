@@ -3,8 +3,7 @@ namespace VogCodeChallenge.Test
     using System;
     using System.Collections.Generic;
     using Moq;
-    using vogCodeChallenge.Common.Repository;
-    using VogCodeChallenge.API.Models;
+    using VogCodeChallenge.API.Domain.AggregatesModel.EmployeeAggregate;
     using Xunit;
 
     public class UnitTest
@@ -35,11 +34,9 @@ namespace VogCodeChallenge.Test
                 }
             };
 
-            var repository = new Mock<IRepository<Employee>>();
-            repository.Setup(x => x.ListAll());
 
             // Act
-            var employeeList = repository.Object.ListAll();
+            var employeeList = employeeInMemoryDatabase;
 
             // Assert
             Assert.NotNull(employeeList);
