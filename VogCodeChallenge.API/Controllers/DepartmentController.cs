@@ -5,26 +5,25 @@
     using System.Net;
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Mvc;
-    using Models;
-    using Repository;
+    using Microsoft.Extensions.Logging;
     using Swashbuckle.AspNetCore.Annotations;
 
     [Route("api/v1/[controller]")]
     [ApiController]
     public class DepartmentController : Controller
     {
-        private readonly IRepository<Department> _IRepository;
+        private readonly ILogger<object> _logger;
 
-        public DepartmentController(IRepository<Department> iRepository)
+        public DepartmentController(ILogger<object> logger)
         {
-            _IRepository = iRepository;
+            _logger = logger;
         }
 
         [HttpGet]
-        [SwaggerOperation(Summary = "Get all companies avaibles")]
+        [SwaggerOperation(Summary = "Get all departments avaibles")]
         [SwaggerResponse((int)HttpStatusCode.OK, "Succesfully Request")]
         [SwaggerResponse((int)HttpStatusCode.BadRequest, "Bad Request")]
-        public Task<IEnumerable<Company>> GetAll()
+        public Task<IEnumerable<object>> GetAll()
         {
             throw new NotImplementedException();
         }
