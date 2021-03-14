@@ -1,7 +1,6 @@
 namespace VogCodeChallenge.API
 {
     using Application.Queries;
-    using Domain.AggregatesModel.EmployeeAggregate;
     using FluentValidation.AspNetCore;
     using Infraestructure.EF;
     using MediatR;
@@ -11,7 +10,6 @@ namespace VogCodeChallenge.API
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
     using vogCodeChallenge.Common.DependencyInjection;
-    using vogCodeChallenge.Common.Repository;
 
     public class Startup
     {
@@ -26,7 +24,6 @@ namespace VogCodeChallenge.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddScoped<IRepository<Employee>, Repository<Employee>>();
 
             services.AddControllersWithViews()
                 .AddFluentValidation(cfg =>

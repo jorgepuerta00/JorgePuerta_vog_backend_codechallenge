@@ -5,26 +5,25 @@
     using System.Net;
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.Logging;
     using Swashbuckle.AspNetCore.Annotations;
-    using vogCodeChallenge.Common.Repository;
-    using VogCodeChallenge.API.Domain.AggregatesModel.CompanyAggregate;
 
     [Route("api/v1/[controller]")]
     [ApiController]
     public class CompanyController : Controller
     {
-        private readonly IRepository<Company> _IRepository;
+        private readonly ILogger<object> _logger;
 
-        public CompanyController(IRepository<Company> iRepository)
+        public CompanyController(ILogger<object> logger)
         {
-            _IRepository = iRepository;
+            _logger = logger;
         }
 
         [HttpGet]
         [SwaggerOperation(Summary = "Get all companies avaibles")]
         [SwaggerResponse((int)HttpStatusCode.OK, "Succesfully Request")]
         [SwaggerResponse((int)HttpStatusCode.BadRequest, "Bad Request")]
-        public Task<IEnumerable<Company>> GetAll()
+        public Task<IEnumerable<object>> GetAll()
         {
             throw new NotImplementedException();
         }
