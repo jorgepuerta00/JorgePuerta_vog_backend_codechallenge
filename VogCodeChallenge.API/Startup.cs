@@ -1,8 +1,14 @@
 namespace VogCodeChallenge.API
 {
     using Application.Queries;
+    using Domain.AggregatesModel.DepartmentAggregate;
+    using Domain.AggregatesModel.EmployeeAggregate;
     using FluentValidation.AspNetCore;
     using Infraestructure.EF;
+    using Infraestructure.Factory;
+    using Infraestructure.Persistance;
+    using Infraestructure.Persistance.InMemory.Dao;
+    using Infraestructure.Repository;
     using MediatR;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -34,6 +40,12 @@ namespace VogCodeChallenge.API
 
             services.AddCustomMSSQLDbContext<ChallengeDbContext>(Configuration)
                     .AddMediatR(typeof(GetEmployeeQueryHandler).Assembly);
+
+            services.AddScoped<IRepository<Employee>, EmployeesRepository>();
+            services.AddScoped<IRepository<Department>, DepartmentsRepository>();
+            services.AddScoped<IDao<Employee>, DaoEmployees>();
+            services.AddScoped<IDao<Department>, DaoDepartment>();
+            services.AddScoped<IFactory, FactoryInMemory>();
 
             services.AddCors(c =>
             {
