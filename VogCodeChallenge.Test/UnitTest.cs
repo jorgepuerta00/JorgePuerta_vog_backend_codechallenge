@@ -41,5 +41,39 @@ namespace VogCodeChallenge.Test
             // Assert
             Assert.NotNull(employeeList);
         }
+
+        [Fact]
+        public void TestDepartmentRepository()
+        {
+            // Arrange
+            List<Employee> employeeInMemoryDatabase = new List<Employee>()
+            {
+                new Employee()
+                {
+                    Id = new Guid(),
+                    FirstName = "George",
+                    LastName = "Gates"
+                },
+                new Employee()
+                {
+                    Id = new Guid(),
+                    FirstName = "Dianne",
+                    LastName = "Morlotte"
+                },
+                new Employee()
+                {
+                    Id = new Guid(),
+                    FirstName = "Raquel",
+                    LastName = "Elsa"
+                }
+            };
+
+
+            // Act
+            var employeeList = employeeInMemoryDatabase;
+
+            // Assert
+            Assert.NotNull(employeeList);
+        }
     }
 }
