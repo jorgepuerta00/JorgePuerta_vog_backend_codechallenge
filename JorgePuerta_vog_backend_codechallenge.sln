@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.808.6
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VogCodeChallenge.API", "VogCodeChallenge.API\VogCodeChallenge.API.csproj", "{DEEA533C-DCC6-49B2-A027-38169DC0214C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VogCodeChallenge.API", "VogCodeChallenge.API\VogCodeChallenge.API.csproj", "{DEEA533C-DCC6-49B2-A027-38169DC0214C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VogCodeChallenge.Test", "VogCodeChallenge.Test\VogCodeChallenge.Test.csproj", "{504FB60A-6DFD-4CCA-9994-6B4976D216C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VogCodeChallenge.Test", "VogCodeChallenge.Test\VogCodeChallenge.Test.csproj", "{504FB60A-6DFD-4CCA-9994-6B4976D216C8}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{4F6E33D4-53A3-46E4-B132-D647F3CCFB13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vogCodeChallenge.Common", "vogCodeChalenge.Common\vogCodeChallenge.Common.csproj", "{F7F7AB25-C599-491C-9E0B-19627D5BB6C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "vogCodeChallenge.Common", "vogCodeChalenge.Common\vogCodeChallenge.Common.csproj", "{F7F7AB25-C599-491C-9E0B-19627D5BB6C4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConsoleProject", "ConsoleProject", "{B8AA5E0E-1465-4437-BC69-57BA6B5F39AC}"
 EndProject
@@ -18,6 +18,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RestApiProject", "RestApiProject", "{975D3074-CEAB-41ED-A4A4-72E82EA8522C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VogCodeChallenge.Console", "VogCodeChallenge.Console\VogCodeChallenge.Console.csproj", "{A8B51DAF-0774-4C0A-A45F-BEE86CD32F5C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VogCodeChallenge.AWSLambda", "VogCodeChallenge.AWSLambda\VogCodeChallenge.AWSLambda.csproj", "{0E1F59B6-5D72-47EF-A928-653636D576E3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VogCodeChallenge.AWSLambda.Tests", "VogCodeChallenge.AWSLambda.Tests\VogCodeChallenge.AWSLambda.Tests.csproj", "{F4AAB0A7-637A-4A8E-9D2D-C9E8A70D740F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,18 +49,28 @@ Global
 		{A8B51DAF-0774-4C0A-A45F-BEE86CD32F5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8B51DAF-0774-4C0A-A45F-BEE86CD32F5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8B51DAF-0774-4C0A-A45F-BEE86CD32F5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E1F59B6-5D72-47EF-A928-653636D576E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E1F59B6-5D72-47EF-A928-653636D576E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E1F59B6-5D72-47EF-A928-653636D576E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E1F59B6-5D72-47EF-A928-653636D576E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4AAB0A7-637A-4A8E-9D2D-C9E8A70D740F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4AAB0A7-637A-4A8E-9D2D-C9E8A70D740F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4AAB0A7-637A-4A8E-9D2D-C9E8A70D740F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4AAB0A7-637A-4A8E-9D2D-C9E8A70D740F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DEEA533C-DCC6-49B2-A027-38169DC0214C} = {975D3074-CEAB-41ED-A4A4-72E82EA8522C}
+		{504FB60A-6DFD-4CCA-9994-6B4976D216C8} = {975D3074-CEAB-41ED-A4A4-72E82EA8522C}
+		{4F6E33D4-53A3-46E4-B132-D647F3CCFB13} = {975D3074-CEAB-41ED-A4A4-72E82EA8522C}
+		{F7F7AB25-C599-491C-9E0B-19627D5BB6C4} = {975D3074-CEAB-41ED-A4A4-72E82EA8522C}
+		{A8B51DAF-0774-4C0A-A45F-BEE86CD32F5C} = {B8AA5E0E-1465-4437-BC69-57BA6B5F39AC}
+		{0E1F59B6-5D72-47EF-A928-653636D576E3} = {D856A300-5716-4880-9382-A630480D23F5}
+		{F4AAB0A7-637A-4A8E-9D2D-C9E8A70D740F} = {D856A300-5716-4880-9382-A630480D23F5}
+	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F074C7D0-0536-4C67-A512-1EA2FDD201E8}
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{4F6E33D4-53A3-46E4-B132-D647F3CCFB13} = {975D3074-CEAB-41ED-A4A4-72E82EA8522C}
-		{DEEA533C-DCC6-49B2-A027-38169DC0214C} = {975D3074-CEAB-41ED-A4A4-72E82EA8522C}
-		{F7F7AB25-C599-491C-9E0B-19627D5BB6C4} = {975D3074-CEAB-41ED-A4A4-72E82EA8522C}
-		{504FB60A-6DFD-4CCA-9994-6B4976D216C8} = {975D3074-CEAB-41ED-A4A4-72E82EA8522C}
-		{A8B51DAF-0774-4C0A-A45F-BEE86CD32F5C} = {B8AA5E0E-1465-4437-BC69-57BA6B5F39AC}
 	EndGlobalSection
 EndGlobal

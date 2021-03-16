@@ -1,10 +1,14 @@
 namespace VogCodeChallenge.Test
 {
+    using Moq;
     using System;
     using System.Collections.Generic;
-    using Moq;
     using VogCodeChallenge.API.Domain.AggregatesModel.EmployeeAggregate;
+    using VogCodeChallenge.API.Infraestructure.Repository;
     using Xunit;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using VogCodeChallenge.API.Domain.AggregatesModel.DepartmentAggregate;
 
     public class UnitTest
     {
@@ -12,7 +16,7 @@ namespace VogCodeChallenge.Test
         public void TestEmployeeRepository()
         {
             // Arrange
-            List<Employee> employeeInMemoryDatabase = new List<Employee>()
+            IEnumerable<Employee> employeeInMemoryDatabase = new List<Employee>()
             {
                 new Employee()
                 {
@@ -34,9 +38,11 @@ namespace VogCodeChallenge.Test
                 }
             };
 
+            var repository = new Mock<IRepository<Employee>>();
 
             // Act
-            var employeeList = employeeInMemoryDatabase;
+            var employeeList = repository.Setup(x => x.GetAll())
+                .Returns(Task.Run(() => employeeInMemoryDatabase));
 
             // Assert
             Assert.NotNull(employeeList);
@@ -46,34 +52,39 @@ namespace VogCodeChallenge.Test
         public void TestDepartmentRepository()
         {
             // Arrange
-            List<Employee> employeeInMemoryDatabase = new List<Employee>()
+            IEnumerable<Department> departmentInMemoryDatabase = new List<Department>()
             {
-                new Employee()
+                new Department()
                 {
                     Id = new Guid(),
-                    FirstName = "George",
-                    LastName = "Gates"
+                    Name = "Department A",
+                    Address = "Ontario",
+                    CompanyId = new Guid()
                 },
-                new Employee()
+                new Department()
                 {
                     Id = new Guid(),
-                    FirstName = "Dianne",
-                    LastName = "Morlotte"
+                    Name = "Department B",
+                    Address = "New York",
+                    CompanyId = new Guid()
                 },
-                new Employee()
+                new Department()
                 {
                     Id = new Guid(),
-                    FirstName = "Raquel",
-                    LastName = "Elsa"
+                    Name = "Department C",
+                    Address = "Medellin",
+                    CompanyId = new Guid()
                 }
             };
 
+            var repository = new Mock<IRepository<Department>>();
 
             // Act
-            var employeeList = employeeInMemoryDatabase;
+            var departmentList = repository.Setup(x => x.GetAll())
+                .Returns(Task.Run(() => departmentInMemoryDatabase));
 
             // Assert
-            Assert.NotNull(employeeList);
+            Assert.NotNull(departmentList);
         }
     }
 }
