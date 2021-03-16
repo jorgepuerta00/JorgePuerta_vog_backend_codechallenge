@@ -27,7 +27,7 @@
         public static void Main(string[] args)
         {
             Fetch(NamesList);
-            Console.WriteLine();
+            Console.ReadLine();
         }
     }
 }
